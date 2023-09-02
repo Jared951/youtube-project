@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Playlist to MP4</title>
+</head>
+<body>
+    <h1>Youtube Playlist to MP4</h1>
+    <form method="POST" action="/convert">
+        <label for="playlist-url">Enter the playlist URL:</label>
+        <input type="text" id="playlist-url" name="playlist-url" placeholder="https://www.youtube.com/playlist?list=your_playlist_id_here">
+        <button type="submit">Convert to MP4</button>
+    </form>
+    
+    <!-- Add a section to display the conversion status or messages -->
+    <div id="conversion-status">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-success">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
